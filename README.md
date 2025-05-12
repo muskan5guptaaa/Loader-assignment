@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎉 Events in Sydney
 
-## Getting Started
+A full-stack web application that displays upcoming events in Sydney, Australia by automatically scraping public event websites. Users can view event details and book tickets via the original source after submitting their email address.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+https://loader-assignment.vercel.app/
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend:** Next.js 13+ (App Router)
+- **Backend:** API Routes in Next.js
+- **Scraping:** Puppeteer
+- **Language:** TypeScript
+- **Storage:** JSON (can be extended to MongoDB/Supabase)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📸 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- ✅ Automatically scrapes latest events from [whatson.cityofsydney.nsw.gov.au](https://whatson.cityofsydney.nsw.gov.au/)
+- ✅ Shows all events with title, image, description, and time
+- ✅ “GET TICKETS” button opens a modal to collect user's email address
+- ✅ After email submission, user is redirected to the original event source
+- ✅ Admin scheduler script keeps events data updated automatically
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+🧪 API Endpoints
+GET /api/events: Returns the list of scraped events
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+POST /api/subscribe: Accepts an email address and logs/stores it for opt-in
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+
+🛠️ Challenges Faced
+Handling dynamic DOM content with Puppeteer required manual waits for selectors.
+
+Some event pages didn’t include expected fields like images or venue.
+
+Puppeteer needs a headless-friendly environment; deployment can be tricky on platforms like Vercel.
+
+Running TypeScript-based schedulers needed configuration for ts-node with ESM loader.
+
+
+---
+
+
+🔮 Improvements & Future Scope
+Integrate with a database (e.g., MongoDB) for persistent storage
+
+Add filters for event type, location, or date range
+
+Send confirmation emails using services like SendGrid or Mailchimp
+
+Add infinite scrolling, search, and UI loading states
+
+Deploy scraper as a background job or serverless function (AWS Lambda, Vercel Cron, etc.)
