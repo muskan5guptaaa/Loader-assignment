@@ -1,0 +1,18 @@
+
+[
+  {
+    "title": "Sydney Festival 2025",
+    "description": "A celebration of arts and culture in Sydney.",
+    "date": "2025-01-10",
+    "location": "Sydney Opera House",
+    "eventUrl": "https://www.eventbrite.com.au/d/australia--sydney/events/"
+
+  },
+  {
+    "title": "Vivid Sydney",
+    "description": "The city comes to life with lights, music, and ideas.",
+    "date": "2025-05-21",
+    "location": "Circular Quay",
+    "eventUrl": "https://www.eventbrite.com.au/d/australia--sydney/events/"
+  }
+]
